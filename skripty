@@ -69,3 +69,12 @@ SUMX(FILTER(data,data[lokalita] = "MOSNOV"),data[srazky])
 ____________________________________________________
 
 07 minimalni datum v roce = MIN(data[datum])
+
+
+_____________________________________________________________
+
+08 pocet vyskytu teplota nad 30 = 
+-- pocet hodnot v danem ze sloupce datum, kdy maximalni_teplota > 30
+COUNTX(
+    FILTER(data,data[maximalni_teplota] >30),
+data[datum])
