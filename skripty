@@ -128,3 +128,9 @@ _______________________________________________________
 MAXX(
 FILTER(data,data[lokalita] = "RUZYNE" || data[lokalita] = "MOSNOV"),
 data[maximalni_teplota])
+_________________________________________________________
+
+14 maximalni teplota v ruzyni a srazky vetsi 0 = 
+-- maximum ze sloupce maximalni_teplota v danem roce
+-- v lokalite ruzyne, kdy srazky vetsi 0
+MAXX(FILTER(data,data[lokalita] = "RUZYNE" && data[srazky] >0),data[maximalni_teplota])
