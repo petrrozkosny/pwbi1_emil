@@ -163,3 +163,9 @@ ____________________________________________________________________
 MINX(
 FILTER(data,data[srazky] > 0 && 
 (WEEKDAY(data[datum],2) = 6 || WEEKDAY(data[datum],2)=7)),WEEKNUM(data[datum],2))
+______________________________________________________________________________
+
+20 suma srazek za dane a predchozi roky = 
+SUMX(
+FILTER(ALL(data),data[rok] <= MAX(data[rok])),
+data[srazky])
