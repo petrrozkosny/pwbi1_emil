@@ -146,3 +146,13 @@ _____________________________________________________
 
 17 minimalni datum mesic 12 = 
 MINX(FILTER(data,data[mesic] = 12),data[datum])
+
+_____________________________________________________________
+
+18 prvni den maximalni teploty mosnov = 
+MINX(
+    FILTER(data,
+    data[lokalita] = "MOSNOV" &&
+    data[maximalni_teplota] = 
+MAXX(FILTER(data,data[lokalita] = "MOSNOV"),data[maximalni_teplota])),
+data[datum])
