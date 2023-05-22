@@ -156,3 +156,10 @@ MINX(
     data[maximalni_teplota] = 
 MAXX(FILTER(data,data[lokalita] = "MOSNOV"),data[maximalni_teplota])),
 data[datum])
+
+____________________________________________________________________
+
+19 cislo tydne prvniho destiveho vikendu = 
+MINX(
+FILTER(data,data[srazky] > 0 && 
+(WEEKDAY(data[datum],2) = 6 || WEEKDAY(data[datum],2)=7)),WEEKNUM(data[datum],2))
