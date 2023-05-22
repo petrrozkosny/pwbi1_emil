@@ -78,3 +78,9 @@ _____________________________________________________________
 COUNTX(
     FILTER(data,data[maximalni_teplota] >30),
 data[datum])
+
+_________________________________________________________
+
+09 maximalni teplota v danem roce = 
+-- maximum ze sloupce maximalni_teplota v danem roce
+MAX(data[maximalni_teplota])
