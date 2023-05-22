@@ -120,3 +120,11 @@ _______________________________________________________________
 MINX(
 FILTER(data,data[maximalni_teplota] =  MAX(data[maximalni_teplota])),
 data[datum])
+
+_______________________________________________________
+
+13 maximalni teplota v roce v lokalitach ruzyne mosnov = 
+-- maximalni teplota v danem roce v lokalite ruzyne nebo mosnov
+MAXX(
+FILTER(data,data[lokalita] = "RUZYNE" || data[lokalita] = "MOSNOV"),
+data[maximalni_teplota])
