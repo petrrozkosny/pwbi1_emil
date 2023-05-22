@@ -134,3 +134,11 @@ _________________________________________________________
 -- maximum ze sloupce maximalni_teplota v danem roce
 -- v lokalite ruzyne, kdy srazky vetsi 0
 MAXX(FILTER(data,data[lokalita] = "RUZYNE" && data[srazky] >0),data[maximalni_teplota])
+________________________________________
+15 minimalni datum = min(data[datum])
+_______________________________________________________
+
+16 minimalni datum v predchozim roce = 
+MINX(
+ FILTER(ALL(data),data[rok] = min(data[rok])-1),
+ data[datum])
