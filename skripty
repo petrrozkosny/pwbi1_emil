@@ -112,3 +112,11 @@ SUMX(
 FILTER(
     ALL(data),data[rok] = MAX(data[rok])-1),
 data[srazky])
+
+_______________________________________________________________
+
+12 datum max teploty v roce = 
+-- prvni datum maximalni teploty
+MINX(
+FILTER(data,data[maximalni_teplota] =  MAX(data[maximalni_teplota])),
+data[datum])
