@@ -142,3 +142,7 @@ _______________________________________________________
 MINX(
  FILTER(ALL(data),data[rok] = min(data[rok])-1),
  data[datum])
+_____________________________________________________
+
+17 minimalni datum mesic 12 = 
+MINX(FILTER(data,data[mesic] = 12),data[datum])
