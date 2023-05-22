@@ -84,3 +84,18 @@ _________________________________________________________
 09 maximalni teplota v danem roce = 
 -- maximum ze sloupce maximalni_teplota v danem roce
 MAX(data[maximalni_teplota])
+
+________________________________________________
+
+10 mesto nejvyssi teploty ve sledovanem obdobi = 
+-- 1. maximalni teplota v danem roce
+-- 2. tabulku filtrovanou pres lokalitu dale filtrovat na maximalni teplotu
+-- 3. hodnoty ze sloupce lokalita tabulky filtrovane na rok
+-- a maximalni teplotu
+CONCATENATEX(
+  FILTER(data,data[maximalni_teplota] = MAX(data[maximalni_teplota])),
+    
+    --CALCULATETABLE(DISTINCT(data[lokalita])
+    --,data[maximalni_teplota] = MAX(data[maximalni_teplota])),
+    
+    data[lokalita],", ")
