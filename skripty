@@ -65,3 +65,7 @@ ________________________________________________
 06 suma srazek mosnov = 
 -- suma srazek v danem roce v lokalita MOSNOV
 SUMX(FILTER(data,data[lokalita] = "MOSNOV"),data[srazky])
+
+____________________________________________________
+
+07 minimalni datum v roce = MIN(data[datum])
