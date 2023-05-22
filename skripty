@@ -59,3 +59,9 @@ _______________________________
 05 suma srazek mesic 6 = 
 -- Suma srážek v daném roce v měsíci číslo 6
 SUMX(FILTER(data,data[mesic] = 6),data[srazky])
+
+________________________________________________
+
+06 suma srazek mosnov = 
+-- suma srazek v danem roce v lokalita MOSNOV
+SUMX(FILTER(data,data[lokalita] = "MOSNOV"),data[srazky])
