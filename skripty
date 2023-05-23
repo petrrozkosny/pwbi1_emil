@@ -195,3 +195,8 @@ MIN(data[datum])
 ________________________________________________
 24 minimalni datum napric mesici a roky = 
 MINX(ALL(data),data[datum])
+
+___________________________________________________________
+
+25 minimalni datum v roce = 
+MINX(FILTER(ALL(data),data[rok] = SELECTEDVALUE(data[rok])),data[datum])
