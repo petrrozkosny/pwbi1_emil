@@ -169,3 +169,14 @@ ______________________________________________________________________________
 SUMX(
 FILTER(ALL(data),data[rok] <= MAX(data[rok])),
 data[srazky])
+
+
+____________________________________________________________________________
+
+21 suma srazek predchozi rok = 
+SUMX(
+    FILTER(
+        ALL(data),
+    data[lokalita] = SELECTEDVALUE(data[lokalita])
+    && data[rok] = SELECTEDVALUE(data[rok])-1),
+data[srazky])
