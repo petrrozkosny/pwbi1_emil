@@ -188,3 +188,10 @@ VAR rok = SELECTEDVALUE(data[rok])
 VAR lokalita = SELECTEDVALUE(data[lokalita])
 RETURN 
 SUMX(FILTER(ALL(data),data[rok]<=rok && data[lokalita] = lokalita),data[srazky])
+
+_______________________
+23 minimalni datum v mesici a roce = 
+MIN(data[datum])
+________________________________________________
+24 minimalni datum napric mesici a roky = 
+MINX(ALL(data),data[datum])
