@@ -239,3 +239,13 @@ SUMX(
     ,data[rok] = MAX(data[rok]) - 1
     && data[lokalita] IN VALUES(data[lokalita]))
 ,data[srazky])
+
+_________________________________________________________
+
+30 pf srazky mezirocne =
+-- suma srazek v danem roce a lokalite
+VAR srazky = SUM(data[srazky])
+-- suma srazek v predchozim roce a dane lokalite
+VAR srazky_predchozi_rok = [29 suma srazek predchozi rok]
+
+RETURN IF(srazky>srazky_predchozi_rok,"CYAN","GOLD")
