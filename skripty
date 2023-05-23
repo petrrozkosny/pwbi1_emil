@@ -249,3 +249,10 @@ VAR srazky = SUM(data[srazky])
 VAR srazky_predchozi_rok = [29 suma srazek predchozi rok]
 
 RETURN IF(srazky>srazky_predchozi_rok,"CYAN","GOLD")
+
+______________________________________________________
+
+31 pf nazev grafu srazky = 
+
+"Vyvoj rocnich srazek v lokalitach :"&
+CONCATENATEX(DISTINCT(data[lokalita]),data[lokalita],", ")
