@@ -287,3 +287,10 @@ __________________________________________________________________
 
 34 suma srazek kumulativne = 
 TOTALYTD(SUM(data[srazky]),data[datum])
+
+______________________________________________________________________
+
+35 suma srazek parametr = 
+SUMX(
+    FILTER(ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok]) - SELECTEDVALUE(Parametr[Parametr])),data[srazky])
