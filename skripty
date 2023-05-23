@@ -180,3 +180,11 @@ SUMX(
     data[lokalita] = SELECTEDVALUE(data[lokalita])
     && data[rok] = SELECTEDVALUE(data[rok])-1),
 data[srazky])
+
+__________________________________________________________________________
+
+22 suma srazek kumulativne = 
+VAR rok = SELECTEDVALUE(data[rok]) 
+VAR lokalita = SELECTEDVALUE(data[lokalita])
+RETURN 
+SUMX(FILTER(ALL(data),data[rok]<=rok && data[lokalita] = lokalita),data[srazky])
