@@ -206,3 +206,10 @@ ____________________________________________________________
 26 minimalni datum v roce mesic 6 = 
 
 MINX(FILTER(ALL(data),data[rok] = SELECTEDVALUE(data[rok]) && data[mesic] = 6),data[datum])
+
+____________________________________________________________________________
+
+27 maximalni datum mesice v klementinum = 
+
+MAXX(FILTER(ALL(data),data[mesic] = SELECTEDVALUE(data[mesic]) 
+&& data[lokalita] = "PRAHA KLEMENTINUM"),data[datum])
