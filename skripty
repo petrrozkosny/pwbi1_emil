@@ -282,3 +282,8 @@ MAXX(
     CALCULATE(SUM(data[srazky])))
 RETURN
 IF(srazky = srazky_dle_let,"CYAN")
+
+__________________________________________________________________
+
+34 suma srazek kumulativne = 
+TOTALYTD(SUM(data[srazky]),data[datum])
