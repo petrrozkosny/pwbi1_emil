@@ -213,3 +213,21 @@ ____________________________________________________________________________
 
 MAXX(FILTER(ALL(data),data[mesic] = SELECTEDVALUE(data[mesic]) 
 && data[lokalita] = "PRAHA KLEMENTINUM"),data[datum])
+
+________________________________________________________
+
+28 pf maximalni teplota = 
+
+-- maximalni teplotu v danem roce a lokalite
+VAR max_teplota = MAX(data[maximalni_teplota])
+
+-- maximalni teplota ve vsech letech a dane lokalite
+
+VAR maximalni_teplota_vse = 
+    MAXX(
+    FILTER(ALL(data),data[lokalita] IN VALUES(data[lokalita])),
+    data[maximalni_teplota])
+
+RETURN 
+IF(max_teplota = maximalni_teplota_vse,"TOMATO")
+
