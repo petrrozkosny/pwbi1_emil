@@ -200,3 +200,9 @@ ___________________________________________________________
 
 25 minimalni datum v roce = 
 MINX(FILTER(ALL(data),data[rok] = SELECTEDVALUE(data[rok])),data[datum])
+
+____________________________________________________________
+
+26 minimalni datum v roce mesic 6 = 
+
+MINX(FILTER(ALL(data),data[rok] = SELECTEDVALUE(data[rok]) && data[mesic] = 6),data[datum])
