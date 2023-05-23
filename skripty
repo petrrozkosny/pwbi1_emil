@@ -231,3 +231,11 @@ VAR maximalni_teplota_vse =
 RETURN 
 IF(max_teplota = maximalni_teplota_vse,"TOMATO")
 
+_______________________________________________________________
+
+29 suma srazek predchozi rok = 
+SUMX(
+    FILTER(ALL(data)
+    ,data[rok] = MAX(data[rok]) - 1
+    && data[lokalita] IN VALUES(data[lokalita]))
+,data[srazky])
