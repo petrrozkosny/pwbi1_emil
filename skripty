@@ -271,3 +271,14 @@ MAXX(FILTER(ALL(data),data[lokalita] IN VALUES(data[lokalita])
 
 RETURN
 IF(max_teplota = max_teplota_mesic,"GOLD")
+
+_____________________________________________________________________
+
+33 maximalni rocni srazky = 
+VAR srazky = SUM(data[srazky])
+VAR srazky_dle_let = 
+MAXX(
+    ALL(data[rok]),
+    CALCULATE(SUM(data[srazky])))
+RETURN
+IF(srazky = srazky_dle_let,"CYAN")
